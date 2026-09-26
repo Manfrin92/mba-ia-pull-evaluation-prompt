@@ -38,14 +38,17 @@ from utils import save_yaml, check_env_vars, print_section_header
 
 load_dotenv()
 
+client = Client()
 
 def pull_prompts_from_langsmith():
-    ...
+    promptName = "python_api_explanation"
 
+    return client.pull_prompt(promptName)
 
 def main():
     """Função principal"""
-    ...
+    response = pull_prompts_from_langsmith()
+    print(response)
 
 
 if __name__ == "__main__":
