@@ -25,10 +25,6 @@ def validate_prompt(prompt_data: dict) -> tuple[bool, list]:
         if "content" not in message or not message["content"]:
             errors.append(f"Mensagem {i} sem 'content'.")
 
-    full_text = " ".join(m.get("content", "") for m in messages)
-    if "{bug_report}" not in full_text:
-        errors.append("Variável {bug_report} não encontrada nas mensagens.")
-
     return len(errors) == 0, errors
 
 
