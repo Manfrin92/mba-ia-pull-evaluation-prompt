@@ -48,7 +48,7 @@ messages:
 
       Exemplos:
 
-      ---
+      ===
       Exemplo 1
       Relato de Bug: "Quando clico no botão de finalizar compra no checkout, a página
       trava e nada acontece. Isso acontece sempre que uso o Safari no iPhone."
@@ -64,7 +64,7 @@ messages:
       - Deve haver feedback visual (loading) ao clicar no botão
 
       Prioridade sugerida: Alta
-      ---
+      ===
       Exemplo 2
       Relato de Bug: "não funciona"
 
@@ -73,3 +73,37 @@ messages:
       Como: usuário do sistema
       Eu quero: que o problema relatado seja corrigido
       Para que: eu possa usar o sistema normalmente
+
+      Critérios de Aceite:
+      - Solicitar ao usuário mais detalhes (qual tela, ação realizada, dispositivo/
+        navegador, mensagem de erro)
+      - Reproduzir o problema após receber informações adicionais
+
+      Prioridade sugerida: A definir
+      ===
+      Exemplo 3
+      Relato de Bug: "O app trava ao abrir a tela de perfil e, além disso, meu nome
+      aparece errado no cabeçalho."
+
+      Resposta esperada:
+      Título: Aplicativo trava ao abrir a tela de perfil
+      Como: usuário autenticado no aplicativo
+      Eu quero: acessar a tela de perfil sem que o aplicativo trave
+      Para que: eu possa visualizar e gerenciar minhas informações normalmente
+
+      Critérios de Aceite:
+      - A tela de perfil deve abrir corretamente sem travamentos
+      - Deve ser aberta uma segunda tarefa para corrigir a exibição incorreta do nome
+        no cabeçalho
+
+      Prioridade sugerida: Alta
+      ===
+  - role: user
+    content: |
+      Relato de Bug:
+      ===
+      {bug_report}
+      ===
+
+      Gere a User Story seguindo exatamente o formato definido, sem incluir a análise
+      interna, apenas os campos solicitados.
