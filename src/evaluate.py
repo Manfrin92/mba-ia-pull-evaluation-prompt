@@ -106,13 +106,12 @@ def pull_prompt_from_langsmith(client: Client, prompt_name: str) -> ChatPromptTe
     try:
         print(f"   Puxando prompt do LangSmith Hub: {prompt_name}")
 
-# ISSO EU TIREI PQ ESTAVA FALHANDO
         # dangerously_pull_public_prompt=True é obrigatório sempre que o identificador
         # tem dono explícito ("owner/nome"). O LangSmith bloqueia esse pull por padrão
         # porque um prompt do Hub é um objeto LangChain serializado, que pode vir de
         # terceiros. Como aqui o prompt é o seu (ou o prompt semente do desafio),
         # o risco é conhecido e aceito.
-        prompt = client.pull_prompt(prompt_name)
+        prompt = client.pull_prompt(prompt_name, dangerously_pull_public_prompt=True)
 
         print(f"   ✓ Prompt carregado com sucesso")
         return prompt
